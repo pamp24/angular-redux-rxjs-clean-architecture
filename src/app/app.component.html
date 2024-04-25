@@ -1,5 +1,5 @@
 <nz-layout class="app-layout">
-  <nz-sider class="menu-sidebar"
+  <!-- <nz-sider class="menu-sidebar"
     nzCollapsible
     nzWidth="256px"
     nzBreakpoint="md"
@@ -8,47 +8,41 @@
     <div class="sidebar-logo">
       <a href="https://ng.ant.design/" target="_blank">
         <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
-        <h1>Ant Design Of Angular</h1>
+        <h1>Application</h1>
       </a>
     </div>
     <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-      <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
+      <li nz-submenu nzOpen nzTitle="Menu" nzIcon="dashboard">
         <ul>
           <li nz-menu-item nzMatchRouter>
-            <a routerLink="/welcome" routerLinkActive="active">Welcome</a>
+            <a routerLink="/home" routerLinkActive="active">Home</a>
           </li>
           <li nz-menu-item nzMatchRouter>
             <a routerLink="/enterprise-overview" routerLinkActive="active">Enterprise - Overview</a>
           </li>
           <li nz-menu-item nzMatchRouter>
-            <a routerLink="/workplace" routerLinkActive="active">Workplace</a>
+            <a routerLink="/site-overview" routerLinkActive="active">Site Overview</a>
           </li>
-        </ul>
-      </li>
-      <li nz-submenu nzOpen nzTitle="Form" nzIcon="form">
-        <ul>
           <li nz-menu-item nzMatchRouter>
-            <a routerLink="/login" routerLinkActive="active">Basic Form</a>
+            <a routerLink="/login" routerLinkActive="active">Login</a>
           </li>
         </ul>
       </li>
     </ul>
-  </nz-sider>
+    <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+      <span class="trigger"
+         nz-icon
+         [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+      ></span>
+  </span>
+  </nz-sider> -->
   <nz-layout>
-    <nz-header>
-      <div class="app-header">
-        <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
-            <span class="trigger"
-               nz-icon
-               [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
-            ></span>
-        </span>
-      </div>
-    </nz-header>
+    <app-header></app-header>
     <nz-content>
       <div class="inner-content">
-        <router-outlet></router-outlet>
+        <app-layout></app-layout>
       </div>
     </nz-content>
+    <app-footer></app-footer>
   </nz-layout>
 </nz-layout>

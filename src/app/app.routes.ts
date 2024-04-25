@@ -1,15 +1,20 @@
 import { Routes } from '@angular/router';
-import { EnterpriseOverviewComponent } from './pages/enterprise-overview/enterprise-overview.component';
-import { WelcomeComponent } from './pages/welcome/welcome.component';
-import { WorkplaceComponent } from './pages/workplace/workplace.component';
-import { LoginComponent } from './pages/login/login.component';
+
+
 
 export const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '/welcome' },
-  { path: 'welcome', component: WelcomeComponent},
-  // { path: 'welcome', 
-  //   loadChildren: () => import('./pages/welcome/welcome.routes').then(m => m.WELCOME_ROUTES) },
-  { path: 'enterprise-overview', component: EnterpriseOverviewComponent},
-  { path: 'workplace', component: WorkplaceComponent},
-  { path: 'login', component: LoginComponent}
+  {path: '', redirectTo:'home', pathMatch:'full'},
+  {path: 'home',
+    loadChildren: () => import('./pages/home/home.routes').then(m => m.HomeRoutes)},
+  { path: 'enterprise-overview',
+    loadChildren: () => import('./pages/enterprise-overview/enterprise-overview.routes').then(m => m.EnterpriseOverviewRoutes)},
+  {path: 'site-overview',
+    loadChildren: () => import('./pages/site-overview/site-overview.routes').then(m => m.SiteOverviewRoutes)},
+  {path: 'login',
+    loadChildren: () => import('./pages/login/login.routes').then(m => m.LoginRoutes)},
+
 ];
+
+  
+  
+
