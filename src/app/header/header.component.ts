@@ -17,7 +17,4 @@ import { NzSpaceModule } from 'ng-zorro-antd/space';
   templateUrl: './header.component.html',
   styleUrl: './header.component.less'
 })
-export class HeaderComponent {
-
-
-}
+export class HeaderComponent {}
