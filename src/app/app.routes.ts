@@ -3,6 +3,7 @@ import { AuthGuard } from './auth/auth.guard';
 
 
 export const AppRoutes: Routes = [
+
     {path: '', 
      redirectTo:'enterprise-overview', 
      pathMatch:'full',

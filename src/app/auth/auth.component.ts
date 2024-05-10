@@ -25,16 +25,18 @@ import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
     NzCheckboxModule,
   ],
   templateUrl: './auth.component.html',
-  styleUrls: ['./auth.component.less']
+  styleUrls: ['./auth.component.less'],
 })
 
 export class AuthComponent {
-  isLogInMode = true;
   checked = true;
+  isLogInMode = true;
   
+  constructor(private fb: NonNullableFormBuilder) {}
+
   onSwitchMode(){
-    this.isLogInMode = !this.isLogInMode;
-  }
+      this.isLogInMode = !this.isLogInMode;
+    }
 
   validateForm: FormGroup<{
     userName: FormControl<string>;
@@ -59,6 +61,6 @@ export class AuthComponent {
     }
   }
 
-  constructor(private fb: NonNullableFormBuilder) {}
+  
 }
 
